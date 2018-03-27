@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Project Name</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="title">
+            </div>
+            <div class="form-group">
+              <label>Priority</label>
+              <select class="form-control" formControlName="priority">
+                <option *ngFor="let prior of defaultPriorities"
+                        [value]="prior.name">
+                  {{prior.name}}
+                </option>
+              </select>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label>Content</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="content">
+          </div>
+
+          <button type="submit" class="btn btn-primary"  [disabled]="!projectForm.valid" >Submit</button>
+          <button type="button" class="btn btn-warning" (click)="redirectProjectPage()">Cancel</button>
+          <pre>{{projectForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

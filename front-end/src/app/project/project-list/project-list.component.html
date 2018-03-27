@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Projects</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewProjectPage()">New Project</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Project</th>
+            <th>Priority</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let project of projects">
+            <th scope="row">{{project.id}}</th>
+            <td>{{project.title}}</td>
+            <td>{{project.priority}}</td>
+            <td>{{project.content}}</td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="editProjectPage(project)">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="deleteProject(project)">Delete</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>
