@@ -1,5 +1,6 @@
 package eu.programez.untimetracker.model;
 
+import eu.programez.untimetracker.utils.Difficulty;
 import eu.programez.untimetracker.utils.Priority;
 
 public class Project {
@@ -7,7 +8,7 @@ public class Project {
     private Long id;
     private String title;
     private Priority priority;
-    private String content;
+    private Difficulty difficulty;
 //    private ProjectType type;
 
     public Long getId() {
@@ -34,11 +35,11 @@ public class Project {
         this.priority = priority;
     }
 
-    public String getContent() {
-        return content;
+    public Difficulty getDifficulty() {
+        return difficulty;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 }

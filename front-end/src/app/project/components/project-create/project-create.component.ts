@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Project} from "../Project";
+import {Project} from "../../model/Project";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProjectService} from "../project.service";
+import {ProjectService} from "../../services/project/project.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -48,7 +48,7 @@ export class ProjectCreateComponent implements OnInit, OnDestroy {
           this.projectForm.patchValue({
             title: project.title,
             priority: project.priority,
-            content: project.content
+            content: project.difficulty
           });
         }, error => {
           console.log(error);

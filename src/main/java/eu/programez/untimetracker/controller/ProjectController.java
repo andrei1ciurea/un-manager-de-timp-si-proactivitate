@@ -3,6 +3,7 @@ package eu.programez.untimetracker.controller;
 import java.util.ArrayList;
 import java.util.List;
 import eu.programez.untimetracker.model.Project;
+import eu.programez.untimetracker.utils.Difficulty;
 import eu.programez.untimetracker.utils.Priority;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -51,7 +52,7 @@ public class ProjectController {
     public Project updateProject(@RequestBody Project project) {
         Project modifiedProject = this.projects.stream().filter(p -> p.getId() == project.getId()).findFirst().orElse(null);
         modifiedProject.setTitle(project.getTitle());
-        modifiedProject.setContent(project.getContent());
+        modifiedProject.setDifficulty(project.getDifficulty());
         modifiedProject.setPriority(project.getPriority());
         return modifiedProject;
     }
@@ -70,8 +71,8 @@ public class ProjectController {
     List<Project> buildProjects() {
         List<Project> projects = new ArrayList<>();
 
-        Project project1 = buildProject(0L, "Piano", Priority.NOW, "content");
-        Project project2 = buildProject(1L, "Guitar", Priority.HIGH, "content");
+        Project project1 = buildProject(0L, "Piano", Priority.NOW, Difficulty.EZ);
+        Project project2 = buildProject(1L, "Guitar", Priority.HIGH, Difficulty.EZ);
 
         projects.add(project1);
         projects.add(project2);
@@ -80,12 +81,12 @@ public class ProjectController {
 
     }
 
-    Project buildProject(Long id, String title, Priority priority, String content) {
+    Project buildProject(Long id, String title, Priority priority, Difficulty difficulty) {
         Project project = new Project();
         project.setId(id);
         project.setTitle(title);
         project.setPriority(priority);
-        project.setContent(content);
+        project.setDifficulty(difficulty);
         return project;
     }
 
