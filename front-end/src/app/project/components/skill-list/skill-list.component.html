@@ -1,3 +1,42 @@
-<p>
-  skill-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Skills</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewSkillPage()">Add Skill</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+      <section class="main">
+
+        <ul id="hexGrid">
+          <li *ngFor="let skill of skills" class="hex">
+            <a class="hexIn" href="#">
+              <img src={{skill.imgPath}} alt=""/>
+              <h1>{{skill.title}}</h1>
+              <p>This is a Description</p>
+            </a>
+          </li>
+          <li class="hex">
+            <a class="hexIn" href="#">
+              <img src={{skillDefault.imgPath}} alt=""/>
+              <h1>{{skillDefault.title}}</h1>
+              <p>This is a Description</p>
+            </a>
+          </li>
+        </ul>
+
+      </section>
+    </div>
+  </div>
+</div>

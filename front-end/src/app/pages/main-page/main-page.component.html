@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Dashboard</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectNewProjectPage()">New Project</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+        <div class="row">
+          <div class="col-md-6">
+            <app-project-list></app-project-list>
+          </div>
+          <div class="col-md-6">
+            <app-skill-list></app-skill-list>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+</div>

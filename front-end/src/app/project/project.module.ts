@@ -7,6 +7,7 @@ import { ProjectCreateComponent } from './components/project-create/project-crea
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { SkillCreateComponent } from './components/skill-create/skill-create.component';
+import {MainPageComponent} from "../pages/main-page/main-page.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { SkillCreateComponent } from './components/skill-create/skill-create.com
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [ProjectListComponent, ProjectCreateComponent, SkillListComponent, SkillCreateComponent]
+  declarations: [MainPageComponent, ProjectListComponent, ProjectCreateComponent, SkillListComponent, SkillCreateComponent]
 })
 export class ProjectModule { }

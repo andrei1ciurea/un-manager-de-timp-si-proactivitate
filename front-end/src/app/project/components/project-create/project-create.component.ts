@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Project} from "../../model/Project";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProjectService} from "../../services/project/project.service";
+import {ProjectService} from "../../services/project.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
